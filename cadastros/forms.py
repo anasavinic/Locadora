@@ -1,9 +1,14 @@
 from django import forms
-from django.forms import DateTimeInput, DateInput
-import django.forms.widgets
-import datetime
+from django.forms import DateInput
 
-from cadastros.models import Filme, Cliente, Aluguel
+from cadastros.models import Filme, Cliente, Aluguel, Genero
+
+
+class GeneroForm(forms.ModelForm):
+
+    class Meta:
+        model = Genero
+        fields = "__all__"
 
 
 class FilmeForm(forms.ModelForm):

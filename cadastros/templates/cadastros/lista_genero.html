@@ -3,9 +3,9 @@
 {% block conteudo %}
     <span class="badge badge-secondary"><h4>Gêneros:</h4></span>
     <ul class="list-group">
-        {% for filme in filmes %}
-            <a class="list-group-item list group item action" href="{% url 'filmes-detail' filme.id %}">
-                {{ filme.titulo }}</a>
+        {% for genero in genero %}
+            <a class="list-group-item list group item action" href="{% url 'genero-detail' genero.id %}">
+                {{ genero.tipo }}</a>
         {% endfor %}
     </ul>
 {% endblock %}

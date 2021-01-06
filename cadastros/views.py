@@ -1,8 +1,57 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
-from cadastros.forms import FilmeForm, ClienteForm, AluguelForm
-from cadastros.models import Filme, Cliente, Aluguel
+from cadastros.forms import FilmeForm, ClienteForm, AluguelForm, GeneroForm
+from cadastros.models import Filme, Cliente, Aluguel, Genero
+
+
+def lista_genero(request):
+
+    qs = Genero.objects.filter()
+
+    context = {
+        'genero': qs,
+    }
+
+    return render(request, 'cadastros/lista_genero.html', context)
+
+
+def detalhe_genero(request, id):
+
+    genero = get_object_or_404(Genero, pk=id)
+
+    context = {
+        'genero': genero,
+    }
+
+    return render(request, 'cadastros/detalhe_genero.html', context)
+
+
+def cadastrar_genero(request):
+
+    if request.method == 'POST':
+        form = GeneroForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('genero-list')
+    else:
+        form = GeneroForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'cadastros/cadastrar_genero.html', context)
+
+
+def remove_genero(request, id):
+
+    genero = get_object_or_404(Genero, pk=id)
+
+    genero.delete()
+
+    return redirect('genero-list')
 
 
 def lista_filmes(request):

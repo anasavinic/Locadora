@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <span class="badge badge-secondary"><h4>Detalhes dos Gêneros:</h4></span>
+    <ul class="list-group">
+        <li class="list-group-item"><b>Gênero:</b> {{ genero.tipo }}</li>
+    </ul>
+    <p></p>
+    <a class="btn btn-danger" href="{% url 'genero-remove' genero.id %}"> Apagar Registro </a>
+{% endblock %}

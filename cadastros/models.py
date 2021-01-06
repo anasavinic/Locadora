@@ -2,26 +2,19 @@ from django.db import models
 
 # Create your models here.
 
+class Genero(models.Model):
+    tipo = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.tipo
+
+
 class Filme(models.Model):
-
-    GENERO_ACAO = 'Ação'
-    GENERO_COMEDIA = 'Comédia'
-    GENERO_DRAMA = 'Drama'
-    GENERO_TERROR = 'Terror'
-    GENERO_FICCAO = 'Ficção'
-
-    GENERO_CHOICES = [
-        (GENERO_ACAO, 'Ação'),
-        (GENERO_COMEDIA, 'Comédia'),
-        (GENERO_DRAMA, 'Drama'),
-        (GENERO_TERROR, 'Terror'),
-        (GENERO_FICCAO, 'Ficção'),
-    ]
 
     titulo = models.CharField(max_length=100)
     ano = models.IntegerField(blank=True, default=0)
     diretor = models.CharField(max_length=100, default="")
-    genero = models.CharField(choices=GENERO_CHOICES, max_length=10, default=GENERO_ACAO)
+    genero = models.ForeignKey(Genero, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titulo

@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <span class="badge badge-secondary"><h4>Cadastrar Aluguel de Filme:</h4></span>
-    <form action="{% url 'aluguel-create' %}" method="POST">
+    <span class="badge badge-secondary"><h4>Cadastrar Novo Gênero:</h4></span>
+    <form action="{% url 'genero-create' %}" method="POST">
         <p></p>
-        <div class="form-group">
         {% csrf_token %}
         {{ form.as_p }}
             <input type="submit" value="Salvar" class="btn btn-primary">
-        </div>
     </form>
 {% endblock %}

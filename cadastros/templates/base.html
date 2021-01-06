@@ -13,10 +13,13 @@
     <div class="container">
         <div class="alert alert-dark" role="alert" style="text-align:center"><h1>Bem-vindo a <b>Locadora de Filmes</b></h1></div>
         <div class="alert alert-light" role="alert" style="text-align:center"><h5>Alugue seu filme sem sair de Casa!</b></h5></div>
-        <a class="btn btn-warning" href="{% url 'cliente-list' %}"><b>Listar Clientes</b></a>
-        <a class="btn btn-warning" href="{% url 'filmes-list' %}"><b>Listar Filmes</b></a>
-        <a class="btn btn-warning" href="{% url 'aluguel-list' %}"><b>Listar Aluguéis</b></a>
+
+        <a class="btn btn-warning" href="{% url 'genero-list' %}"><b>Gêneros</b></a>
+        <a class="btn btn-warning" href="{% url 'cliente-list' %}"><b>Clientes</b></a>
+        <a class="btn btn-warning" href="{% url 'filmes-list' %}"><b>Filmes</b></a>
+        <a class="btn btn-warning" href="{% url 'aluguel-list' %}"><b>Aluguéis</b></a>
         <a class="btn btn-warning" href="{% url 'cliente-create' %}"><b>Cadastrar Cliente</b></a>
+        <a class="btn btn-warning" href="{% url 'genero-create' %}"><b>Cadastrar Gênero</b></a>
         <a class="btn btn-warning" href="{% url 'filmes-create' %}"><b>Cadastrar Filme</b></a>
         <a class="btn btn-primary" href="{% url 'aluguel-create' %}"><b>Alugar Filme</b></a>
         <p></p>
