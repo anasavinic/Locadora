@@ -1,6 +1,7 @@
 from django.urls import include, path
 from cadastros.views import lista_filmes, detalhe_filmes, cadastrar_filmes, remove_filmes, lista_cliente, \
-    detalhe_cliente, remove_cliente, cadastrar_cliente, lista_aluguel, detalhe_aluguel, cadastrar_aluguel
+    detalhe_cliente, remove_cliente, cadastrar_cliente, lista_aluguel, detalhe_aluguel, cadastrar_aluguel, \
+    remove_aluguel
 
 urlpatterns = [
     path('', include([
@@ -20,7 +21,7 @@ urlpatterns = [
     path('aluguel/', include([
         path('', lista_aluguel, name='aluguel-list'),
         path('detalhe/<int:id>/', detalhe_aluguel, name='aluguel-detail'),
-        # path('remove/<int:id>/', remove_aluguel, name='aluguel-remove'),
+        path('remove/<int:id>/', remove_aluguel, name='aluguel-remove'),
         path('create/', cadastrar_aluguel, name='aluguel-create'),
     ])),
 ]

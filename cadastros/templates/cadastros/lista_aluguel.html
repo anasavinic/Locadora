@@ -3,9 +3,9 @@
 {% block conteudo %}
     <span class="badge badge-secondary"><h4>Filmes Alugados:</h4></span>
     <ul class="list-group">
-        {% for aluguel in alugueis %}
-            <a class="list-group-item list group item action" href="{% url 'aluguel-detail' alugueis.id %}">
-                {{ alugueis.nome }}</a>
+        {% for aluguel in aluguel %}
+            <a class="list-group-item list group item action" href="{% url 'aluguel-detail' aluguel.id %}">
+                {{ aluguel.filme }}</a>
         {% endfor %}
     </ul>
 {% endblock %}

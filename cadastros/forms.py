@@ -22,8 +22,8 @@ class ClienteForm(forms.ModelForm):
 
 class AluguelForm(forms.ModelForm):
 
-    inicio = forms.CharField(widget=DateInput())
-    fim = forms.CharField(widget=DateInput())
+    inicio = forms.CharField(widget=DateInput(), help_text='Entre com a Data no Seguinte Formato: AAAA-MM-DD')
+    fim = forms.CharField(widget=DateInput(), help_text='Entre com a Data no Seguinte Formato: AAAA-MM-DD')
 
     class Meta:
         model = Aluguel

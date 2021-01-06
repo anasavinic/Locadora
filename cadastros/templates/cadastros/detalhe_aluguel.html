@@ -3,6 +3,10 @@
 {% block conteudo %}
     <span class="badge badge-secondary"><h4>Detalhes do Aluguel:</h4></span>
     <ul class="list-group">
+        <li class="list-group-item"><b>Nome:</b> {{ aluguel.cliente.nome }}</li>
+        <li class="list-group-item"><b>E-mail:</b> {{ aluguel.cliente.email }}</li>
+        <li class="list-group-item"><b>Data da Locação:</b> {{ aluguel.inicio }}</li>
+        <li class="list-group-item"><b>Data de Devolução:</b> {{ aluguel.fim }}</li>
     </ul>
     <p></p>
     <a class="btn btn-danger" href="{% url 'aluguel-remove' aluguel.id %}"> Apagar Registro </a>

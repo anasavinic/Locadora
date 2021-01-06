@@ -40,8 +40,8 @@ class Aluguel(models.Model):
 
     filme = models.ForeignKey(Filme, on_delete=models.PROTECT)
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
-    inicio = models.DateField(auto_now=True)
-    fim = models.DateField(auto_now=True)
+    inicio = models.DateField(verbose_name='Data de Locação')
+    fim = models.DateField(verbose_name='Data de Devolução')
 
     def __str__(self):
         return self.filme
