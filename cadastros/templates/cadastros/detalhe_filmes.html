@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <span class="badge badge-secondary"><h4>Detalhes dos Filmes:</h4></span>
+    <span class="badge badge-secondary"><h4>Detalhes do Filme:</h4></span>
     <ul class="list-group">
         <li class="list-group-item"><b>Título:</b> {{ filmes.titulo }}</li>
         <li class="list-group-item"><b>Ano:</b> {{ filmes.ano }}</li>
         <li class="list-group-item"><b>Diretor:</b> {{ filmes.diretor }}</li>
+        <li class="list-group-item"><b>Gênero:</b> {{ filmes.genero.tipo }}</li>
     </ul>
     <p></p>
     <a class="btn btn-danger" href="{% url 'filmes-remove' filmes.id %}"> Apagar Registro </a>

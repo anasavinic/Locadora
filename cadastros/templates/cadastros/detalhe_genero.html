@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-    <span class="badge badge-secondary"><h4>Detalhes dos Gêneros:</h4></span>
-    <ul class="list-group">
-        <li class="list-group-item"><b>Gênero:</b> {{ genero.tipo }}</li>
-    </ul>
+    <span class="badge badge-secondary"><h4>Filmes do Gênero {{ genero.tipo }}:</h4></span>
     <p></p>
-    <a class="btn btn-danger" href="{% url 'genero-remove' genero.id %}"> Apagar Registro </a>
+    <ul class="list-group">
+        {% if filme_mostrar %}
+            {% for filme in filme_mostrar %}
+                <a class="list-group-item list group item action" href="{% url 'filmes-detail' filme.id %}">
+                    {{ filme.titulo }}</a>
+            {% endfor %}
+        {% else %}
+            <p>Ainda não temos filmes de {{ genero.tipo }} cadastrado!</p>
+        {% endif %}
+    </ul>
 {% endblock %}

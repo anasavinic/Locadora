@@ -4,8 +4,8 @@
     <span class="badge badge-secondary"><h4>Gêneros:</h4></span>
     <ul class="list-group">
         {% for genero in genero %}
-            <a class="list-group-item list group item action" href="{% url 'genero-detail' genero.id %}">
-                {{ genero.tipo }}</a>
+            <a class="list-group-item list group item action badge badge-light" href="{% url 'genero-detail' genero.id %}">
+                <h6>{{ genero.tipo }}</h6></a>
         {% endfor %}
     </ul>
 {% endblock %}

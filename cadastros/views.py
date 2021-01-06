@@ -20,8 +20,11 @@ def detalhe_genero(request, id):
 
     genero = get_object_or_404(Genero, pk=id)
 
+    filme_mostrar = Filme.objects.filter(genero_id=genero)
+
     context = {
         'genero': genero,
+        'filme_mostrar': filme_mostrar,
     }
 
     return render(request, 'cadastros/detalhe_genero.html', context)
@@ -43,15 +46,6 @@ def cadastrar_genero(request):
     }
 
     return render(request, 'cadastros/cadastrar_genero.html', context)
-
-
-def remove_genero(request, id):
-
-    genero = get_object_or_404(Genero, pk=id)
-
-    genero.delete()
-
-    return redirect('genero-list')
 
 
 def lista_filmes(request):
