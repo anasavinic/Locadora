@@ -4,8 +4,8 @@
     <span class="badge badge-secondary"><h4>Filmes:</h4></span>
     <ul class="list-group">
         {% for filme in filmes %}
-            <a class="list-group-item list group item action" href="{% url 'filmes-detail' filme.id %}">
-                {{ filme.titulo }}</a>
+            <a class="list-group-item list group item action badge badge-light" href="{% url 'filmes-detail' filme.id %}">
+                <h6>{{ filme.titulo }}</h6></a>
         {% endfor %}
     </ul>
 {% endblock %}

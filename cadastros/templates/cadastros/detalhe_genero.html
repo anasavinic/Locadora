@@ -6,8 +6,8 @@
     <ul class="list-group">
         {% if filme_mostrar %}
             {% for filme in filme_mostrar %}
-                <a class="list-group-item list group item action" href="{% url 'filmes-detail' filme.id %}">
-                    {{ filme.titulo }}</a>
+                <a class="list-group-item list group item action badge badge-light" href="{% url 'filmes-detail' filme.id %}">
+                    <h6>{{ filme.titulo }}</h6></a>
             {% endfor %}
         {% else %}
             <p>Ainda não temos filmes de {{ genero.tipo }} cadastrado!</p>

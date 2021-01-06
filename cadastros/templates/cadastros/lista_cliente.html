@@ -4,8 +4,8 @@
     <span class="badge badge-secondary"><h4>Clientes:</h4></span>
     <ul class="list-group">
         {% for cliente in clientes %}
-            <a class="list-group-item list group item action" href="{% url 'cliente-detail' cliente.id %}">
-                {{ cliente.nome }}</a>
+            <a class="list-group-item list group item action badge badge-light" href="{% url 'cliente-detail' cliente.id %}">
+                <h6>{{ cliente.nome }}</h6></a>
         {% endfor %}
     </ul>
 {% endblock %}
