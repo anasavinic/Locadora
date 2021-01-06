@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <span class="badge badge-secondary"><h4>Cadastrar Novo Cliente:</h4></span>
+    <form action="{% url 'cliente-create' %}" method="POST">
+        <p></p>
+        {% csrf_token %}
+        {{ form.as_p }}
+            <input type="submit" value="Salvar" class="btn btn-primary">
+    </form>
+{% endblock %}

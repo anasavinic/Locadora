@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <span class="badge badge-secondary"><h4>Detalhes do Cliente:</h4></span>
+    <ul class="list-group">
+        <li class="list-group-item"><b>Nome:</b> {{ clientes.nome }}</li>
+        <li class="list-group-item"><b>E-mail:</b> {{ clientes.email }}</li>
+    </ul>
+    <p></p>
+    <a class="btn btn-danger" href="{% url 'cliente-remove' clientes.id %}"> Apagar Registro </a>
+{% endblock %}

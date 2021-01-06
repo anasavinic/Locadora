@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <span class="badge badge-secondary"><h4>Detalhes do Aluguel:</h4></span>
+    <ul class="list-group">
+    </ul>
+    <p></p>
+    <a class="btn btn-danger" href="{% url 'aluguel-remove' aluguel.id %}"> Apagar Registro </a>
+{% endblock %}
